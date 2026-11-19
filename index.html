@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ekskul Sekolah - Pendaftaran Anggota Baru</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="wrap nav-inner">
+      <a href="#beranda" class="brand">Ekskul<span>Sekolah</span></a>
+      <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false">&#9776;</button>
+      <nav id="menu" class="menu">
+        <a href="#beranda">Beranda</a>
+        <a href="#ekskul">Ekstrakurikuler</a>
+        <a href="#cara">Cara Daftar</a>
+        <a href="#kontak">Kontak</a>
+        <a href="#daftar" class="btn btn-small">Daftar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="beranda" class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Temukan ekskul yang cocok denganmu.</h1>
+          <p class="lead">Ada 15 kegiatan di sekolah kita, dari olahraga sampai seni. Pilih satu, isi formulir, dan mulai bergabung.</p>
+          <div class="hero-actions">
+            <a href="#ekskul" class="btn btn-sun">Lihat ekstrakurikuler</a>
+            <a href="#daftar" class="btn btn-ghost">Daftar sekarang</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <div class="hero-fallback" aria-hidden="true"><span>⚽</span><span>🎤</span><span>🚩</span><span>🥁</span><span>🩹</span><span>💃</span></div>
+          <img src="img/hero.jpg" alt="Kegiatan ekstrakurikuler siswa" onerror="this.remove()">
+        </div>
+      </div>
+      <div class="ticker" aria-hidden="true"><div class="ticker-track" id="tickerTrack"></div></div>
+    </section>
+
+    <section id="ekskul" class="section">
+      <div class="wrap">
+        <h2>Ekstrakurikuler di sekolah kita</h2>
+        <p class="section-sub">Filter berdasarkan jenis kegiatan, lalu tekan tombol daftar pada ekskul pilihanmu.</p>
+        <div class="filters" id="filters">
+          <button class="chip active" data-cat="Semua">Semua</button>
+          <button class="chip" data-cat="Organisasi">Organisasi</button>
+          <button class="chip" data-cat="Olahraga">Olahraga</button>
+          <button class="chip" data-cat="Seni &amp; Media">Seni &amp; Media</button>
+          <button class="chip" data-cat="Keagamaan">Keagamaan</button>
+        </div>
+        <div class="grid" id="ekskulGrid"></div>
+      </div>
+    </section>
+
+    <section id="cara" class="section alt">
+      <div class="wrap">
+        <h2>Cara mendaftar</h2>
+        <ol class="steps">
+          <li><strong>Pilih ekskul</strong><span>Lihat daftar di atas dan tentukan kegiatan yang kamu minati.</span></li>
+          <li><strong>Isi formulir</strong><span>Lengkapi nama, email, password, dan pilihan ekskul.</span></li>
+          <li><strong>Tunggu konfirmasi</strong><span>Pembina akan menghubungi kamu lewat email.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="daftar" class="section">
+      <div class="wrap signup">
+        <div class="signup-text">
+          <h2>Daftar jadi anggota baru</h2>
+          <p>Satu akun untuk satu ekskul. Semua kolom wajib diisi, dan kamu akan langsung melihat kalau ada yang salah.</p>
+          <ul class="rules">
+            <li>Nama minimal 3 karakter</li>
+            <li>Email harus berformat benar</li>
+            <li>Password minimal 8 karakter</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <form id="formDaftar" novalidate>
+            <div class="form-group">
+              <label for="nama">Nama Lengkap</label>
+              <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" autocomplete="name">
+              <small class="error-msg" id="namaError"></small>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="contoh@email.com" autocomplete="email">
+              <small class="error-msg" id="emailError"></small>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="Minimal 8 karakter" autocomplete="new-password">
+              <small class="error-msg" id="passwordError"></small>
+            </div>
+            <div class="form-group">
+              <label for="konfirmasi">Konfirmasi Password</label>
+              <input type="password" id="konfirmasi" name="konfirmasi" placeholder="Ulangi password" autocomplete="new-password">
+              <small class="error-msg" id="konfirmasiError"></small>
+            </div>
+            <div class="form-group">
+              <label for="ekskul">Pilihan Ekstrakurikuler</label>
+              <select id="ekskul" name="ekskul">
+                <option value="">Pilih ekstrakurikuler</option>
+                <option value="Paskibra">Paskibra</option>
+                <option value="Pramuka">Pramuka</option>
+                <option value="PMR">PMR</option>
+                <option value="Jepun">Jepun</option>
+                <option value="Silat">Silat</option>
+                <option value="Foster">Foster</option>
+                <option value="Voli">Voli</option>
+                <option value="Futsal">Futsal</option>
+                <option value="Jurnalis">Jurnalis</option>
+                <option value="MTQ">MTQ</option>
+                <option value="Rebana">Rebana</option>
+                <option value="Rohis">Rohis</option>
+                <option value="Padus">Padus</option>
+                <option value="Drumband">Drumband</option>
+                <option value="Tari">Tari</option>
+              </select>
+              <small class="error-msg" id="ekskulError"></small>
+            </div>
+            <button type="submit" class="btn btn-block">Daftar sekarang</button>
+          </form>
+          <div id="pesanSukses" class="success-box" role="status" hidden></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="kontak" class="footer">
+    <div class="wrap foot-grid">
+      <div>
+        <a href="#beranda" class="brand">Ekskul<span>Sekolah</span></a>
+        <p>Wadah mengembangkan bakat, karakter, dan pertemanan di luar jam pelajaran.</p>
+      </div>
+      <div>
+        <h3>Tautan</h3>
+        <a href="#ekskul">Ekstrakurikuler</a>
+        <a href="#cara">Cara Daftar</a>
+        <a href="#daftar">Formulir Pendaftaran</a>
+      </div>
+      <div>
+        <h3>Kontak</h3>
+        <p>Ruang OSIS, lantai 1</p>
+        <p>ekskul@sekolah.sch.id</p>
+        <p>Senin - Jumat, 07.00 - 15.00</p>
+      </div>
+    </div>
+    <div class="copy">&copy; <span id="tahun"></span> Ekskul Sekolah. Dibuat untuk tugas LKPD 6 PBTGM.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
