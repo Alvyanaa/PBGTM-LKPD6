@@ -22,7 +22,7 @@ a { color: inherit; text-decoration: none; }
 .wrap { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 :focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
 
-/* Tombol */
+
 .btn { display: inline-block; padding: 12px 22px; font: 700 0.95rem "DM Sans", sans-serif; color: var(--white); background: linear-gradient(90deg, var(--blue), var(--purple)); border: 2px solid transparent; border-radius: 999px; cursor: pointer; transition: filter .2s; }
 .btn:hover { filter: brightness(1.1); }
 .btn-sun { color: var(--ink); background: var(--sun); }
@@ -31,7 +31,7 @@ a { color: inherit; text-decoration: none; }
 .btn-small { padding: 8px 18px; }
 .btn-block { width: 100%; border-radius: 10px; }
 
-/* Navbar */
+
 .navbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, .96); border-bottom: 4px solid transparent; border-image: linear-gradient(90deg, var(--pink), var(--sun), var(--green), var(--blue), var(--purple)) 1; backdrop-filter: blur(6px); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 66px; }
 .brand { font-size: 1.35rem; font-weight: 800; }
@@ -40,7 +40,7 @@ a { color: inherit; text-decoration: none; }
 .menu a:not(.btn):hover { color: var(--pink); }
 .burger { display: none; font-size: 1.6rem; background: none; border: none; color: var(--ink); cursor: pointer; }
 
-/* Hero */
+
 .hero { padding: 64px 0 0; color: var(--white); background: linear-gradient(135deg, #3b5bfd 0%, #8b5cf6 55%, #ff4f8b 100%); }
 .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
 .hero h1 { font-size: clamp(2.3rem, 5.5vw, 4rem); font-weight: 800; }
@@ -55,13 +55,13 @@ a { color: inherit; text-decoration: none; }
 .t0 { background: var(--sun); } .t1 { background: #ff8fab; } .t2 { background: #6ee7b7; } .t3 { background: #93c5fd; } .t4 { background: #c4b5fd; }
 @keyframes geser { to { transform: translateX(-50%); } }
 
-/* Seksi */
+
 .section { padding: 80px 0; }
 .section.alt { background: linear-gradient(180deg, #e9edff, #fff0f6); }
 .section h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 800; }
 .section-sub { margin: 10px 0 24px; color: var(--muted); }
 
-/* Filter + kartu ekskul */
+
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
 .chip { padding: 8px 16px; font: 700 0.9rem "DM Sans", sans-serif; color: var(--ink); background: var(--white); border: 2px solid var(--line); border-radius: 999px; cursor: pointer; }
 .chip:hover { border-color: var(--purple); }
@@ -82,7 +82,7 @@ a { color: inherit; text-decoration: none; }
 .eks button { padding: 9px; font: 700 .9rem "DM Sans", sans-serif; color: var(--white); background: var(--c1); border: none; border-radius: 8px; cursor: pointer; transition: filter .2s; }
 .eks button:hover { filter: brightness(1.15); }
 
-/* Langkah */
+
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 28px; padding-left: 0; list-style-position: inside; }
 .steps li { padding: 22px; background: var(--white); border-left: 8px solid var(--blue); border-radius: 10px; }
 .steps li:nth-child(2) { border-color: var(--pink); }
@@ -91,7 +91,7 @@ a { color: inherit; text-decoration: none; }
 .steps strong { font-size: 1.15rem; }
 .steps span { display: block; margin-top: 6px; color: var(--muted); }
 
-/* Pendaftaran */
+
 .signup { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: start; }
 .signup-text p { margin: 12px 0 18px; color: var(--muted); }
 .rules { padding-left: 20px; }
@@ -107,7 +107,7 @@ input.valid, select.valid { border-color: var(--ok); }
 .error-msg.show { display: block; }
 .success-box { margin-top: 18px; padding: 14px; font-weight: 700; color: #0b6b36; background: #dcfce7; border: 2px solid var(--ok); border-radius: 8px; }
 
-/* Footer */
+
 .footer { padding: 56px 0 0; color: #e3e6ff; background: linear-gradient(135deg, #1e1b4b, #4c1d95); border-top: 6px solid var(--sun); }
 .footer .brand { color: var(--white); }
 .footer .brand span { color: var(--sun); }
@@ -118,7 +118,7 @@ input.valid, select.valid { border-color: var(--ok); }
 .foot-grid a:not(.brand):hover { color: var(--sun); }
 .copy { margin-top: 40px; padding: 18px 20px; text-align: center; font-size: .85rem; border-top: 1px solid rgba(255, 255, 255, .18); }
 
-/* Responsif */
+
 @media (max-width: 860px) {
   .hero-grid, .signup { grid-template-columns: 1fr; gap: 28px; }
   .hero-photo { max-width: 460px; }
