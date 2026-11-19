@@ -1,4 +1,4 @@
-/* ===== Data ekstrakurikuler ===== */
+
 const ekskulData = [
   { nama: "Paskibra", ikon: "🚩", kat: "Organisasi", desc: "Melatih disiplin dan baris-berbaris, serta bertugas sebagai pengibar bendera." },
   { nama: "Pramuka", ikon: "⛺", kat: "Organisasi", desc: "Belajar kemandirian, kepemimpinan, dan keterampilan alam bersama regu." },
@@ -17,7 +17,7 @@ const ekskulData = [
   { nama: "Tari", ikon: "💃", kat: "Seni & Media", desc: "Belajar tari tradisional dan modern untuk pentas dan festival." },
 ];
 
-/* Warna tiap ekskul (gradasi) */
+
 const warna = {
   Paskibra: ["#e63946", "#ff8a3d"], Pramuka: ["#a16207", "#facc15"], PMR: ["#ef4444", "#ff8fab"],
   Jepun: ["#f43f5e", "#fb7185"], Silat: ["#1d4ed8", "#38bdf8"], Foster: ["#7c3aed", "#c084fc"],
@@ -29,7 +29,7 @@ const warna = {
 const grid = document.getElementById("ekskulGrid");
 const ticker = document.getElementById("tickerTrack");
 
-/* Kartu ekskul */
+
 function tampilkanEkskul(kategori) {
   grid.innerHTML = "";
   ekskulData
@@ -53,7 +53,7 @@ function tampilkanEkskul(kategori) {
     });
 }
 
-/* Klik "Daftar ..." mengisi dropdown lalu menuju form */
+
 function pilihEkskul(nama) {
   fields.ekskul.value = nama;
   validasiEkskul();
@@ -69,11 +69,11 @@ document.getElementById("filters").addEventListener("click", (ev) => {
   tampilkanEkskul(chip.dataset.cat);
 });
 
-/* Ticker nama ekskul (diduplikasi agar berjalan mulus) */
+
 const namaEkskul = ekskulData.map((e, i) => "<span class=\"t" + (i % 5) + "\">" + e.nama + "</span>").join("");
 ticker.innerHTML = namaEkskul + namaEkskul;
 
-/* Navbar mobile */
+
 const burger = document.getElementById("burger");
 const menu = document.getElementById("menu");
 burger.addEventListener("click", () => {
@@ -89,7 +89,7 @@ menu.querySelectorAll("a").forEach((a) =>
 
 document.getElementById("tahun").textContent = new Date().getFullYear();
 
-/* ===== Validasi form ===== */
+
 const form = document.getElementById("formDaftar");
 const pesanSukses = document.getElementById("pesanSukses");
 
